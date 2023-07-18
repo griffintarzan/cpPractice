@@ -19,5 +19,17 @@ int main() {
   }
   cout << "\n";
 
+  //sort
+  vector<int> sorted = {4,2,5,3,9,1};
+  cout<< "original vector not sorted"<<endl;
+  for (auto it: sorted) {
+    cout << it << " ";
+  }
+  cout << endl << "after sorting"<<endl;
+  sort(sorted.begin(), sorted.end());
+  for (auto it: sorted) {
+    cout<<it<<" ";
+  }
+  cout << endl;
   return 0;
 }
