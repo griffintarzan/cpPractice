@@ -36,18 +36,20 @@ int main() {
     cout << arr[i] << " ";
   cout << "\n";
   printf("==================\n");
-/*
-  shuffle(v.begin(), v.end(), default_random_engine()); // shuffle the content
-  for (auto &val : v)
-    printf("%d ", val);
-  printf("\n");
-  printf("==================\n");
-  partial_sort(v.begin(), v.begin()+2, v.end()); // partial_sort demo
-  for (auto &val : v)
-    printf("%d ", val);
-  printf("\n");
-  printf("==================\n");
 
+  random_shuffle(v.begin(), v.end()); // shuffle the content
+  //shuffle(v.begin(), v.end(), default_random_engine());
+  for (auto val : v)
+    cout << val << " ";
+  printf("\n");
+  printf("==================\n");
+  
+  partial_sort(v.begin(), v.begin()+3, v.end()); // partial_sort from [0, 3)
+  for (auto &val : v)
+    printf("%d ", val);
+  printf("\n");
+  printf("==================\n");
+/*
   // sort ascending
   sort(arr, arr+5);                              // arr is sorted now
   for (int i = 0; i < 5; ++i)                    // 2, 4, 7, 10, 15
