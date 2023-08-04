@@ -20,22 +20,23 @@ bool icpc_cmp(team a, team b) {
 int main() {
   int arr[] = {10, 7, 2, 15, 4};
   vector<int> v(arr, arr+5);                     // alternative constructor
-/*
+
   // sort descending with vector
+  cout << "Sorting the array {10, 7, 2, 15, 4}"<<"\n";
   sort(v.rbegin(), v.rend());                    // reverse iterator
-  for (auto &val : v)
-    printf("%d ", val);                          // access the values
-  printf("\n");
-  printf("==================\n");
+  for (auto val : v)
+    cout << val << " ";                          // access the values
+  cout << "\n";
+  cout << "==================\n";
 
   // sort descending with integer array
   sort(arr, arr+5);                              // ascending
   reverse(arr, arr+5);                           // then reverse
   for (int i = 0; i < 5; ++i)
-    printf("%d ", arr[i]);
-  printf("\n");
+    cout << arr[i] << " ";
+  cout << "\n";
   printf("==================\n");
-
+/*
   shuffle(v.begin(), v.end(), default_random_engine()); // shuffle the content
   for (auto &val : v)
     printf("%d ", val);
