@@ -7,36 +7,36 @@ Sorting the array {10, 7, 2, 15, 4}
 ==================
 2 4 7 10 15 
 ==================
-ID: 1
-solved: 1
-penalty: 10
-
-ID: 2
-solved: 2
-penalty: 10
-
-ID: 3
-solved: 2
-penalty: 11
-
-ID: 4
-solved: 1
-penalty: 10
-
+2 4 7 10 15 
+2 4 7 10 15 
+==================
+ID: 1 solved: 1 penalty: 10
+ID: 2 solved: 2 penalty: 10
+ID: 3 solved: 2 penalty: 11
+ID: 4 solved: 1 penalty: 10
 After Sorting: 
-ID: 2
-solved: 2
-penalty: 10
-
-ID: 3
-solved: 2
-penalty: 11
-
-ID: 1
-solved: 1
-penalty: 10
-
-ID: 4
-solved: 1
-penalty: 10
-
+ID: 2 solved: 2 penalty: 10
+ID: 3 solved: 2 penalty: 11
+ID: 1 solved: 1 penalty: 10
+ID: 4 solved: 1 penalty: 10
+==================
+value: 10, name1 = steven, name2 = grace
+value: 7, name1 = steven, name2 = halim
+value: 7, name1 = steven, name2 = felix
+value: 9, name1 = a, name2 = b
+==================
+value: 7, name1 = steven, name2 = felix
+value: 7, name1 = steven, name2 = halim
+value: 9, name1 = a, name2 = b
+value: 10, name1 = steven, name2 = grace
+==================
+7
+7
+77 not found
+77 not found
+==================
+2 4 10 7 15 
+2 4 10 7 15 
+==================
+min(10, 7) = 7
+max(10, 7) = 10

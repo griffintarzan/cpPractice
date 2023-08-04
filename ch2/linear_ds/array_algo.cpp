@@ -49,7 +49,7 @@ int main() {
     printf("%d ", val);
   printf("\n");
   printf("==================\n");
-/*
+
   // sort ascending
   sort(arr, arr+5);                              // arr is sorted now
   for (int i = 0; i < 5; ++i)                    // 2, 4, 7, 10, 15
@@ -61,23 +61,24 @@ int main() {
   printf("\n");
   printf("==================\n");
 
-  // multi-field sorting example, suppose we have 4 ICPC teams
-  team nus[4] = { {1, 1, 10},
-                  {2, 3, 60},
-                  {3, 1, 20},
-                  {4, 3, 60} };
+  // multi-field sorting example, suppose we have 4 ICPC teams from Purdue
+  vector<team> purdue;
+  purdue.push_back(team {1, 1, 10});
+  purdue.push_back(team {2, 2, 10});
+  purdue.push_back(team {3, 2, 11});
+  purdue.push_back(team {4, 1, 10});
 
-  // without sorting, they will be ranked like this:
-  for (int i = 0; i < 4; ++i)
-    printf("id: %d, solved: %d, penalty: %d\n",
-           nus[i].id, nus[i].solved, nus[i].penalty);
+  //without sorting
+  for (auto it : purdue) {
+    cout << "ID: " << it.id << " solved: " << it.solved << " penalty: "<<it.penalty << "\n";
+  }
 
-  sort(nus, nus+4, icpc_cmp);           // sort using a comparison function
-  printf("==================\n");
-  // after sorting using ICPC rule, they will be ranked like this:
-  for (int i = 0; i < 4; ++i)
-    printf("id: %d, solved: %d, penalty: %d\n",
-           nus[i].id, nus[i].solved, nus[i].penalty);
+  //with sorting
+  cout << "After Sorting: "<<"\n";
+  sort(purdue.begin(), purdue.end(), icpc_cmp);
+  for (auto it : purdue) {
+    cout << "ID: " << it.id << " solved: " << it.solved << " penalty: "<<it.penalty << "\n";
+  }
   printf("==================\n");
 
   // there is a technique for multi-field sorting if the sort order is "standard"
@@ -103,6 +104,7 @@ int main() {
   printf("==================\n");
 
   // binary search using lower bound
+  // you can also use find()
   auto pos = lower_bound(arr, arr+5, 7);         // found
   printf("%d\n", *pos);
   auto j = lower_bound(v.begin(), v.end(), 7);
@@ -142,25 +144,7 @@ int main() {
   // sometimes these two useful simple macros are used
   printf("min(10, 7) = %d\n", min(10, 7));
   printf("max(10, 7) = %d\n", max(10, 7));
-*/
-  vector<team> purdue;
-  purdue.push_back(team {1, 1, 10});
-  purdue.push_back(team {2, 2, 10});
-  purdue.push_back(team {3, 2, 11});
-  purdue.push_back(team {4, 1, 10});
-  for (auto it : purdue) {
-    cout << "ID: " << it.id << "\n";
-    cout << "solved: " << it.solved << "\n";
-    cout << "penalty: "<<it.penalty << "\n";
-    cout << "\n";
-  }
-  cout << "After Sorting: "<<"\n";
-  sort(purdue.begin(), purdue.end(), icpc_cmp);
-  for (auto it : purdue) {
-    cout << "ID: " << it.id << "\n";
-    cout << "solved: " << it.solved << "\n";
-    cout << "penalty: "<<it.penalty << "\n";
-    cout << "\n";
-  }
+
+  
   return 0;
 }
