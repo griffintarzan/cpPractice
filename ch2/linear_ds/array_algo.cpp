@@ -9,12 +9,12 @@ typedef struct {
 
 bool icpc_cmp(team a, team b) {
   if (a.solved != b.solved) // can use this primary field to decide sorted order
-    return a.solved > b.solved;   // ICPC rule: sort by number of problem solved
+    return a.solved > b.solved;   // sort by descending number of problem solved
   else if (a.penalty != b.penalty)       // a.solved == b.solved, but we can use
                                        // secondary field to decide sorted order
-    return a.penalty < b.penalty;       // ICPC rule: sort by descending penalty
+    return a.penalty < b.penalty;       // sort by increasing penalty
   else                        // a.solved == b.solved AND a.penalty == b.penalty
-    return a.id < b.id;                      // sort increasing team ID order
+    return a.id < b.id;                      // sort by increasing team ID order
 }
 
 int main() {
@@ -146,7 +146,10 @@ int main() {
   purdue.push_back(team {3, 2, 11});
   purdue.push_back(team {4, 1, 10});
   for (auto it : purdue) {
-    cout << it.id << "\n";
+    cout << "ID: " << it.id << "\n";
+    cout << "solved: " << it.solved << "\n";
+    cout << "penalty: "<<it.penalty << "\n";
+    cout << "\n";
   }
   cout << "After Sorting: "<<"\n";
   sort(purdue.begin(), purdue.end(), icpc_cmp);
