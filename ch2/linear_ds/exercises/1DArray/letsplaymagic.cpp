@@ -9,19 +9,27 @@ int main() {
     vector < string > cardarr(N);
     string card, spelling;
     int cnt;
-    int idx = 0;
+    int idx = -1;
     for (int i = 0; i < N; i++) {
       cin >> card >> spelling;
       cnt = spelling.size();
-      for (int j = 0; j < cnt; j++) {
-        if (!cardarr[(idx + j) % N].empty()) {
-          cnt++;
-        } else {
-          if (j == cnt - 1) idx = (idx + j) % N;
+      // for (int j = 0; j < cnt; j++) {
+      //     if (!cardarr[(idx+j)%N].empty()) {
+      //         cnt++;
+      //     } else {
+      //         if (j == cnt-1) idx = (idx+j)%N;
+      //     }
+      // }
+      // replaced messy for loop with while loop.
+      while (cnt) {
+
+        idx = (idx + 1) % N;
+        if (cardarr[(idx) % N].empty()) {
+          cnt--;
         }
       }
       cardarr[idx] = card;
-      idx = (idx + 1) % N;
+      //idx = (idx+1)%N; used for for loop
     }
     cout << cardarr[0];
     for (int i = 1; i < N; i++) {
@@ -30,4 +38,5 @@ int main() {
     cout << "\n";
   }
   return 0;
+
 }
