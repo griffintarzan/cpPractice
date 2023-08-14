@@ -1,3 +1,8 @@
+/*
+ * Comparing my solution with others, learned that I can
+ * use c++ string's .back() and .pop_back() to easily remove trailing zeros
+ * and pop all mutual 0s in the back of 2 strings to ease the process.
+ */
 #include <bits/stdc++.h>
 
 using namespace std;
