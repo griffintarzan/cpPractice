@@ -5,19 +5,22 @@ using namespace std;
 int main() {
   int N, M;
   cin >> N >> M;
-  char dance[2000][2000];
+  //char dance[2000][2000];
+  // using a 1D vector string can also work as a 2D char array, saves time. 
+  vector < string > dance(N);
   int count = 1;
   for (int i = 0; i < N; i++) {
-    for (int j = 0; j < M; j++) {
-      cin >> dance[i][j];
-    }
+    cin >> dance[i];
   }
+
   for (int j = 0; j < M; j++) {
     int i = 0;
-    while (dance[i][j] == '_' && i < N) {
+    //Need to check for i<N prior or else you will get index out of bounds for the array
+    while (i < N && dance[i][j] == '_') {
+
       i++;
     }
-    //cout << i << "\n";
+
     if (i == N) {
       count++;
     }
