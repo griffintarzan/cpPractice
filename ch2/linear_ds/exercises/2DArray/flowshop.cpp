@@ -5,10 +5,14 @@ using namespace std;
 int main() {
   int N, M;
   cin >> N >> M;
-  int time[1000][1000];
+  //int time[1000][1000];
+  vector<vector<int>> time;
+  time.resize(N);
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < M; j++) {
-      cin >> time[i][j];
+      int temp;
+      cin >> temp;
+      time[i].push_back(temp);
     }
   }
 
